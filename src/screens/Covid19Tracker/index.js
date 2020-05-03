@@ -1,4 +1,4 @@
-import React, {useEffect, useState, createContext, useCallback} from 'react';
+import React, {useEffect, useState, useCallback} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -64,6 +64,8 @@ const Covid19Tracker = () => {
             const {Active: active, Deaths: deaths, Recovered: recovered} = data;
             setStatus({active, deaths, recovered});
           }
+        } else {
+          setStatus({active: 0, deaths: 0, recovered: 0});
         }
       } catch (error) {
       } finally {
